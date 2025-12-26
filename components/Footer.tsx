@@ -66,8 +66,9 @@ export default function Footer() {
                                 </a>
                             )}
                             {/* @ts-ignore - linkedin might not exist in type yet but works at runtime */}
-                            {companyInfo.social.linkedin && (
-                                <a href={companyInfo.social.linkedin} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary transition-all duration-300">
+                            {/* @ts-ignore */}
+                            {(companyInfo.social as any).linkedin && (
+                                <a href={(companyInfo.social as any).linkedin} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary transition-all duration-300">
                                     <Linkedin className="w-5 h-5" />
                                 </a>
                             )}
