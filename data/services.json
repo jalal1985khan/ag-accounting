@@ -1,0 +1,68 @@
+[
+    {
+        "title": "Tax Returns",
+        "desc": "Comprehensive personal and business tax return services ensuring full compliance.",
+        "icon": "FileText",
+        "href": "/services/tax-returns"
+    },
+    {
+        "title": "Self Assessment",
+        "desc": "Expert guidance for self-employed individuals and landlords to minimize tax liabilities.",
+        "icon": "Calculator",
+        "href": "/services/self-assessment"
+    },
+    {
+        "title": "Company Accounting",
+        "desc": "Annual accounts preparation and filing for limited companies of all sizes.",
+        "icon": "TrendingUp",
+        "href": "/services/company-accounting"
+    },
+    {
+        "title": "Payroll Services",
+        "desc": "Accurate and timely payroll processing, including RTI and pension compliance.",
+        "icon": "Users",
+        "href": "/services/payroll-services"
+    },
+    {
+        "title": "VAT Accounting",
+        "desc": "Advice on VAT registration, returns, and Making Tax Digital (MTD) compliance.",
+        "icon": "ShieldCheck",
+        "href": "/services/vat-accounting"
+    },
+    {
+        "title": "Bookkeeping",
+        "desc": "Efficient bookkeeping solutions to keep your financial records organized and accurate.",
+        "icon": "Clock",
+        "href": "/services/bookkeeping"
+    },
+    {
+        "title": "Start-up Business",
+        "desc": "Strategic advice and setup services to give your new business the best start possible.",
+        "icon": "Rocket",
+        "href": "/services/start-up-business"
+    },
+    {
+        "title": "CIS Accounting",
+        "desc": "Specialized accounting for the Construction Industry Scheme, ensuring accurate deductions and filings.",
+        "icon": "HardHat",
+        "href": "/services/cis-accounting"
+    },
+    {
+        "title": "Tax Investigations",
+        "desc": "Expert support and representation during HMRC tax investigations to protect your interests.",
+        "icon": "Search",
+        "href": "/services/tax-investigations-advice"
+    },
+    {
+        "title": "Outsourcing",
+        "desc": "Cost-effective outsourcing solutions for your finance function, allowing you to focus on growth.",
+        "icon": "Globe",
+        "href": "/services/outsourcing"
+    },
+    {
+        "title": "Management Consultancy",
+        "desc": "Actionable insights and strategic planning to optimize performance and drive business value.",
+        "icon": "BarChart2",
+        "href": "/services/management-consultancy"
+    }
+]

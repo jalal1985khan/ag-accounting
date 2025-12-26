@@ -1,65 +1,128 @@
-import Image from "next/image";
+import React from "react"
+import Link from "next/link"
+import Image from "next/image"
+import {
+  CheckCircle2,
+} from "lucide-react"
+import LatestBlogs from "@/components/LatestBlogs"
+import companyInfo from "@/data/company-info.json"
+import HomeHero from "@/components/HomeHero"
+import HomeServices from "@/components/HomeServices"
+
+const stats = [
+  { label: "Years Experience", value: "15+" },
+  { label: "Happy Clients", value: "500+" },
+  { label: "Accuracy Rate", value: "99.9%" },
+  { label: "Expert Advisors", value: "12" },
+]
+
+export const metadata = {
+  alternates: {
+    canonical: '/',
+  },
+}
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="flex flex-col">
+      <HomeHero />
+
+      {/* Stats Section */}
+      <section className="bg-secondary relative py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {stats.map((stat, i) => (
+              <div key={i} className="text-center group">
+                <p className="text-4xl lg:text-5xl font-bold font-outfit text-white mb-2 group-hover:text-primary transition-colors">{stat.value}</p>
+                <p className="text-blue-200/50 text-sm font-semibold uppercase tracking-widest">{stat.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+      </section>
+
+      <HomeServices />
+
+      {/* Trust Section */}
+      <section className="py-24 bg-muted overflow-hidden">
+        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-20 items-center">
+          <div className="relative">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1000&auto=format&fit=crop"
+              alt="Professional Team"
+              width={1000}
+              height={667}
+              className="rounded-3xl shadow-2xl relative z-10"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <div className="absolute -bottom-10 -left-10 bg-primary p-10 rounded-3xl text-white shadow-2xl z-20 hidden sm:block">
+              <p className="text-4xl font-bold font-outfit mb-2">15+</p>
+              <p className="text-sm font-medium uppercase tracking-widest opacity-80">Years of Dedicated <br /> Service Excellence</p>
+            </div>
+          </div>
+
+          <div className="space-y-8">
+            <h2 className="text-4xl lg:text-5xl font-bold text-secondary font-outfit">Why Strategic Leaders <br /><span className="text-primary italic">Choose AG Accounting.</span></h2>
+            <p className="text-lg text-secondary/70 leading-relaxed">
+              Managing finances shouldn't be a burden. We provide the expertise and tools necessary to maintain full control over your business growth while staying fully compliant with the latest regulations.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {[
+                "Fixed Fee Guarantee",
+                "Unlimited Support",
+                "MTD Ready Software",
+                "Personal Tax Advisor",
+                "Proactive Planning",
+                "Swift Response"
+              ].map((item, i) => (
+                <div key={i} className="flex items-center space-x-3">
+                  <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0" />
+                  <span className="font-bold text-secondary">{item}</span>
+                </div>
+              ))}
+            </div>
+            <div className="pt-6">
+              <Link href="/about" className="text-secondary font-bold border-b-2 border-primary pb-2 hover:text-primary transition-colors">
+                Discover Our Story
+              </Link>
+            </div>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* Latest Insights Section */}
+      <LatestBlogs />
+
+      {/* CTA Section */}
+      <section className="py-24">
+        <div className="container mx-auto px-4">
+          <div className="bg-secondary p-12 lg:p-24 rounded-[40px] text-center relative overflow-hidden">
+            <div className="relative z-10 space-y-8">
+              <h2 className="text-4xl lg:text-6xl font-bold text-white font-outfit tracking-tight">Ready to transform your <br /> financial future?</h2>
+              <p className="text-xl text-white/60 max-w-2xl mx-auto">Join hundreds of successful businesses who trust us with their numbers. Get a free consultation today.</p>
+              <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 pt-8">
+                <Link href="/contact" className="bg-primary text-white px-12 py-5 rounded-full font-bold text-xl hover:bg-white hover:text-secondary transition-all shadow-2xl flex items-center justify-center">
+                  Book a Consultation
+                </Link>
+                <a href={`tel:${companyInfo.tel.replace(/\s+/g, '')}`} className="text-white border-2 border-white/20 px-12 py-5 rounded-full font-bold text-xl hover:bg-white/10 transition-all flex items-center justify-center">
+                  Call {companyInfo.tel}
+                </a>
+              </div>
+            </div>
+            {/* Background pattern */}
+            <div className="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
+              <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1" />
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-  );
+  )
 }
+
